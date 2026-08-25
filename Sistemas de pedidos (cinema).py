@@ -2,17 +2,16 @@ opc = 1
 valortotal = 0
 qtd = 0
 pedidos = ""
-while opc !=0:
+while True:
     try:
         opc = int(input('''
-              ⤿ Menu de categorias  
-1- Filmes
-2- Combos (Pipocas e bebidas)
-3- finalizar compra
-Informe a categoria escolhida:     '''))
+                ⤿ Menu de categorias  
+    1- Filmes
+    2- Combos (Pipocas e bebidas)
+    3- finalizar compra
+    Informe a categoria escolhida:     '''))
     except ValueError:
-        print("ERRO! Digite um número inteiro, por favor tente novamente")
-        continue
+        print("Caracter inválido! Tente novamente.")
     if opc == 3:
         break
     match opc:
@@ -81,6 +80,10 @@ Subtotal: R${valorpr} ''')
                 case _:
                     print("Valor inválido, tente novamente!")
                     continue
+        case _:
+          print("Valor inválido, tente novamente!")
+          continue  
+
 print(pedidos)
 print(f"Total de itens: {qtd}")
 if valortotal > 50:
